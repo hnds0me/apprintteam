@@ -6,12 +6,34 @@ Vue.use(VueRouter)
 const routes = [{
 		path: '/',
 		name: 'home',
+		meta: {
+			layout: 'main'
+		},
 		component: () => import('../views/Home.vue')
 	},
 	{
 		path: '/about',
 		name: 'about',
+		meta: {
+			layout: 'main'
+		},
 		component: () => import('../views/About.vue')
+	},
+	{
+		path: '/dashboard',
+		name: 'dashboard',
+		meta: {
+			layout: 'main'
+		},
+		component: () => import('../views/Dashboard.vue')
+	},
+	{
+		path: '/login',
+		name: 'login',
+		meta: {
+			layout: 'empty'
+		},
+		component: () => import('../views/Login.vue')
 	}
 ]
 

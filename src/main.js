@@ -1,7 +1,9 @@
 import Vue from 'vue'
+import Vuelidate from 'vuelidate'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+import messagePlugin from '@/utils/message.plugin'
 import 'materialize-css/dist/js/materialize.min'
 import './registerServiceWorker'
 
@@ -20,6 +22,9 @@ firebase.initializeApp({
 	messagingSenderId: "944217939517",
 	appId: "1:944217939517:web:9b3bb5f3a9bee9fe751454"
 })
+
+Vue.use(Vuelidate)
+Vue.use(messagePlugin)
 
 let app
 

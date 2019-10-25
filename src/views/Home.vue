@@ -1,13 +1,19 @@
 <template>
-	<div class="home">
-		<h5>Наши работы</h5>
+	<div>
+		<Header />
+		<Portfolio />
 	</div>
 </template>
 
 <script>
+	import Header from "@/components/Header";
+	import Portfolio from "@/components/Portfolio";
 	export default {
 		name: "home",
-		components: {}
+		components: {
+			Portfolio,
+			Header
+		}
 	};
 </script>
 
