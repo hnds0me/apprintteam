@@ -1,8 +1,9 @@
 <template>
-	<form class="card auth-card" @submit.prevent="submitHundler">
+	<form class="card auth-card" autocomplete="off" @submit.prevent="submitHundler">
 		<div class="card-content">
 			<div class="input-field">
 				<input
+					autocomplete="off"
 					type="text"
 					id="email"
 					v-model.trim="email"
@@ -18,6 +19,7 @@
 
 			<div class="input-field">
 				<input
+					autocomplete="off"
 					type="password"
 					id="password"
 					v-model.trim="password"
@@ -60,6 +62,10 @@
 		validations: {
 			email: { email, required },
 			password: { required, minLength: minLength(6) }
+		},
+		mounted() {
+			this.email = "";
+			this.password = "";
 		},
 		methods: {
 			async submitHundler() {

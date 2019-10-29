@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 
 import auth from './auth'
 import category from './category'
+import item from './item'
 
 Vue.use(Vuex)
 
@@ -24,6 +25,7 @@ export default new Vuex.Store({
 	actions: {},
 	modules: {
 		auth,
-		category
+		category,
+		item
 	}
 })

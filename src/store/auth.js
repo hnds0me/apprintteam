@@ -18,6 +18,10 @@ export default {
 				throw e
 			}
 		},
+		getUid() {
+			const user = firebase.auth().currentUser
+			return user ? user.uid : null
+		},
 		async logout() {
 			await firebase.auth().signOut();
 		}

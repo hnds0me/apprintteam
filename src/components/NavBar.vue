@@ -17,10 +17,7 @@
 		</ul>
 		<nav class="transparent app-nav">
 			<div class="nav-wrapper container">
-				<a href="#" class="brand-logo left">
-					<img src="../assets/logo.png" alt="aprel" />
-					aprel
-				</a>
+				<a href="#" class="brand-logo left">aprel</a>
 				<a href="#" data-target="mobile-menu" class="sidenav-trigger right">
 					<i class="material-icons">menu</i>
 				</a>
@@ -114,7 +111,7 @@
 		}
 		a {
 			color: #3b3b3b;
-			font-weight: 700;
+			font-weight: 500;
 			letter-spacing: 0.12em;
 			&:hover {
 				background-color: transparent;

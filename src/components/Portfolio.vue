@@ -5,54 +5,11 @@
 				Наши
 				<span class="text-bold">работы</span>
 			</h3>
-		</div>
 
-		<div class="row">
-			<div class="col s12 m6 l4">
-				<div class="card">
+			<div class="row card-row">
+				<div class="card" v-for="item of items" :key="item.id">
 					<div class="card-image">
-						<img src="../assets/header-bg.jpg" />
-						<span class="card-title">Card Title</span>
-					</div>
-				</div>
-			</div>
-			<div class="col s12 m6 l4">
-				<div class="card">
-					<div class="card-image">
-						<img src="../assets/header-bg.jpg" />
-						<span class="card-title">Card Title</span>
-					</div>
-				</div>
-			</div>
-			<div class="col s12 m6 l4">
-				<div class="card">
-					<div class="card-image">
-						<img src="../assets/header-bg.jpg" />
-						<span class="card-title">Card Title</span>
-					</div>
-				</div>
-			</div>
-			<div class="col s12 m6 l4">
-				<div class="card">
-					<div class="card-image">
-						<img src="../assets/header-bg.jpg" />
-						<span class="card-title">Card Title</span>
-					</div>
-				</div>
-			</div>
-			<div class="col s12 m6 l4">
-				<div class="card">
-					<div class="card-image">
-						<img src="../assets/header-bg.jpg" />
-						<span class="card-title">Card Title</span>
-					</div>
-				</div>
-			</div>
-			<div class="col s12 m6 l4">
-				<div class="card">
-					<div class="card-image">
-						<img src="../assets/header-bg.jpg" />
-						<span class="card-title">Card Title</span>
+						<img :src="item.screenshot" />
 					</div>
 				</div>
 			</div>
@@ -61,7 +18,16 @@
 </template>
 
 <script>
-	export default {};
+	export default {
+		name: "portfolio",
+		props: {
+			items: {
+				type: Array,
+				required: true,
+				default: []
+			}
+		}
+	};
 </script>
 
 <style lang="scss" scoped>
@@ -70,7 +36,13 @@
 			padding: 0;
 		}
 	}
+	.card-row {
+		display: flex;
+		flex-wrap: wrap;
+	}
 	.card {
+		flex-grow: 0.5;
+		flex-basis: 33%;
 		box-shadow: none;
 		margin: 0;
 	}

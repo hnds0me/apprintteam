@@ -23,7 +23,7 @@ const routes = [{
 		path: '/dashboard',
 		name: 'dashboard',
 		meta: {
-			layout: 'main'
+			layout: 'dashboard'
 		},
 		component: () => import('../views/Dashboard.vue')
 	},

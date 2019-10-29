@@ -7,6 +7,7 @@
 <script>
 	import EmptyLayout from "@/layouts/EmptyLayout";
 	import MainLayout from "@/layouts/MainLayout";
+	import DashboardLayout from "@/layouts/DashboardLayout";
 
 	export default {
 		computed: {
@@ -16,7 +17,8 @@
 		},
 		components: {
 			EmptyLayout,
-			MainLayout
+			MainLayout,
+			DashboardLayout
 		}
 	};
 </script>
@@ -27,6 +29,10 @@
 	body,
 	html {
 		background-color: #fff;
+	}
+
+	.col {
+		position: relative;
 	}
 
 	.section {

@@ -1,18 +1,15 @@
 <template>
 	<form class="card" @submit.prevent="submitHundler">
 		<div class="card-content">
-			<h5 class="section-title">Добавить раздел</h5>
+			<h5 class="section-title">Добавить категорию</h5>
 
 			<div class="input-field">
-				<i class="material-icons prefix">mode_edit</i>
-				<input id="title" type="text" v-model.trim="title" />
-				<label for="title">Название раздела</label>
+				<input type="text" v-model.trim="title" />
+				<label for="title">Название категории</label>
 			</div>
-		</div>
 
-		<div class="card-action">
 			<button class="btn waves-effect waves-light" type="submit">
-				save
+				create
 				<i class="material-icons right">arrow_forward</i>
 			</button>
 		</div>
@@ -30,9 +27,13 @@
 		methods: {
 			async submitHundler() {
 				try {
-					await this.$store.dispatch("createCategory", {
+					const category = await this.$store.dispatch("createCategory", {
 						title: this.title
 					});
+					this.$emit("createdCategory");
+					this.$message("Категория была создана");
+					this.title = "";
+					this.$v.reset();
 				} catch (e) {}
 			}
 		}
